@@ -1,0 +1,300 @@
+@use "./style/button.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #0d1117;
+    color: whitesmoke;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        'Open Sans',
+        'Helvetica Neue',
+        sans-serif;
+
+    transition: .3s ease;
+}
+
+
+/* ================= DARK MODE ================= */
+
+body {
+
+    background: #0d1117;
+
+}
+
+
+/* ================= LIGHT MODE ================= */
+
+body.light-theme {
+
+    background: #f3f6fb;
+    color: #111827;
+
+}
+
+body.light-theme #root {
+
+    background: #f3f6fb;
+    color: #111827;
+
+}
+
+
+/* ================= GLOBAL TEXT ================= */
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme span,
+body.light-theme label,
+body.light-theme p,
+body.light-theme li,
+body.light-theme a {
+
+    color: #111827;
+
+}
+
+.highlight {
+
+    color: #ff2d78;
+
+}
+
+
+/* ================= PAGE CONTAINERS ================= */
+
+body.light-theme .home-page,
+body.light-theme .interview-page {
+
+    background: #f3f6fb !important;
+    color: #111827 !important;
+
+}
+
+
+/* ================= CARDS ================= */
+
+body.light-theme .interview-card,
+body.light-theme .interview-layout,
+body.light-theme .report-item,
+body.light-theme .q-card,
+body.light-theme .roadmap-day,
+body.light-theme .interview-sidebar,
+body.light-theme .interview-nav,
+body.light-theme .panel {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe1ea !important;
+
+    color: #111827 !important;
+
+}
+
+
+/* ================= INPUTS ================= */
+
+body.light-theme textarea,
+body.light-theme input {
+
+    background: #f8fafc !important;
+
+    color: #111827 !important;
+
+    border: 1px solid #dbe1ea !important;
+
+}
+
+body.light-theme textarea::placeholder,
+body.light-theme input::placeholder,
+body.light-theme .panel__textarea::placeholder {
+
+    color: #6b7280 !important;
+    opacity: 1 !important;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+body.light-theme .navbar {
+
+    background: #ffffff !important;
+
+    border-bottom: 1px solid #dbe1ea;
+
+}
+
+body.light-theme .navbar__left,
+body.light-theme .theme-btn {
+
+    color: #111827 !important;
+
+}
+
+
+/* ================= HEADER ================= */
+
+body.light-theme .page-header h1 {
+
+    color: #111827 !important;
+
+}
+
+body.light-theme .page-header p {
+
+    color: #4b5563 !important;
+
+}
+
+
+/* ================= LABELS ================= */
+
+body.light-theme .section-label,
+body.light-theme .panel__header h2,
+body.light-theme .self-description label,
+body.light-theme .char-counter,
+body.light-theme .footer-info,
+body.light-theme .report-meta {
+
+    color: #1f2937 !important;
+
+}
+
+
+/* ================= DROPZONE ================= */
+
+body.light-theme .dropzone {
+
+    background: #ffffff !important;
+
+    border: 2px dashed #cbd5e1 !important;
+
+}
+
+body.light-theme .dropzone__title {
+
+    color: #111827 !important;
+    font-weight: 600;
+
+}
+
+body.light-theme .dropzone__subtitle {
+
+    color: #4b5563 !important;
+
+}
+
+body.light-theme .dropzone__icon {
+
+    color: #ff2d78 !important;
+
+}
+
+
+/* ================= OR DIVIDER ================= */
+
+body.light-theme .or-divider {
+
+    color: #6b7280 !important;
+
+}
+
+body.light-theme .or-divider::before,
+body.light-theme .or-divider::after {
+
+    background: #d1d5db !important;
+
+}
+
+
+/* ================= INFO BOX ================= */
+
+body.light-theme .info-box {
+
+    background: #eaf2ff !important;
+
+    border: 1px solid #c3d4ff !important;
+
+}
+
+body.light-theme .info-box p {
+
+    color: #1e40af !important;
+
+}
+
+body.light-theme .info-box strong {
+
+    color: #111827 !important;
+
+}
+
+
+/* ================= INTERVIEW PAGE FIX ================= */
+
+body.light-theme .content-header h2,
+body.light-theme .q-card__question,
+body.light-theme .roadmap-day__focus,
+body.light-theme .match-score__value {
+
+    color: #111827 !important;
+
+}
+
+
+/* ===== FIX FOR "5 QUESTIONS" BADGE ===== */
+
+body.light-theme .content-header__count {
+
+    background: #ffe3ef !important;
+    color: #ff2d78 !important;
+    border: 1px solid #ffb3cf !important;
+    font-weight: 600;
+
+}
+
+
+/* ================= BUTTONS ================= */
+
+body.light-theme .generate-btn {
+
+    color: white !important;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px) {
+
+    body.light-theme .home-page {
+
+        padding: 1rem;
+
+    }
+
+}
