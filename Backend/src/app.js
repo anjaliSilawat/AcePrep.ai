@@ -6,20 +6,26 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://your-frontend-url.vercel.app"
+    ],
     credentials: true
 }))
 
-/* require all the routes here */
+// Root route
+app.get("/", (req, res) => {
+    res.send("AcePrep API is running 🚀")
+})
+
+/* require all routes */
 const authRouter = require("./routes/auth.routes")
 const interviewRouter = require("./routes/interview.routes")
 
-
-/* using all the routes here */
+/* use routes */
 app.use("/api/auth", authRouter)
 app.use("/api/interview", interviewRouter)
-
-
 
 module.exports = app
