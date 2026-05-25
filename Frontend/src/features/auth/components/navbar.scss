@@ -100,3 +100,31 @@
     }
 
 }
+
+.navbar__right{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logout-btn{
+
+    border:none;
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+.logout-btn:hover{
+
+    transform:scale(1.05);
+}

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
+import { useAuth } from "../hooks/useAuth";
 import "./navbar.scss";
 
 const Navbar = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+
+    const { user, handleLogout } = useAuth();
 
     const [darkMode, setDarkMode] = useState(true);
 
@@ -40,13 +43,21 @@ const Navbar = () => {
 
     };
 
+    const logoutUser = async () => {
+
+        await handleLogout();
+
+        navigate("/login", {
+            replace: true
+        });
+
+    };
+
     return (
 
         <nav className="navbar">
 
             <div className="navbar__left">
-
-                {/* Logo + Name */}
 
                 <div
                     className="brand"
@@ -89,6 +100,15 @@ const Navbar = () => {
                 >
                     {darkMode ? "🌙" : "☀️"}
                 </button>
+
+                {user && (
+                    <button
+                        className="logout-btn"
+                        onClick={logoutUser}
+                    >
+                        Logout
+                    </button>
+                )}
 
             </div>
 
