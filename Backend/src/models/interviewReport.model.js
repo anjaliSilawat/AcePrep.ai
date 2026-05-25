@@ -11,7 +11,7 @@ const technicalQuestionSchema = new mongoose.Schema({
     },
     answer: {
         type: String,
-        required: [true, "Answer is required"]
+        default: ""
     }
 }, {
     _id: false
@@ -28,7 +28,7 @@ const behavioralQuestionSchema = new mongoose.Schema({
     },
     answer: {
         type: String,
-        required: [true, "Answer is required"]
+        default: ""
     }
 }, {
     _id: false
@@ -58,8 +58,7 @@ const preparationPlanSchema = new mongoose.Schema({
         required: [true, "Focus is required"]
     },
     tasks: [{
-        type: String,
-        required: [true, "Task is required"]
+        type: String
     }]
 }, {
     _id: false
@@ -89,7 +88,6 @@ const interviewReportSchema = new mongoose.Schema({
 
     behavioralQuestions: [behavioralQuestionSchema],
 
-    // FIXED HERE
     skillGaps: [skillGapSchema],
 
     resumeSuggestions: [{
