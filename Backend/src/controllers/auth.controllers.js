@@ -37,7 +37,13 @@ async function registerUserController(req, res) {
         { expiresIn: "1d" }
     )
 
-    res.cookie("token", token)
+    // Fixed cookie settings for Vercel + Render
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        maxAge: 24 * 60 * 60 * 1000
+    })
 
     res.status(201).json({
         message: "User registered successfully",
@@ -61,7 +67,10 @@ async function loginUserController(req, res) {
         })
     }
 
-    const isPasswordValid = await bcrypt.compare(password, user.password)
+    const isPasswordValid = await bcrypt.compare(
+        password,
+        user.password
+    )
 
     if (!isPasswordValid) {
         return res.status(400).json({
@@ -75,10 +84,16 @@ async function loginUserController(req, res) {
         { expiresIn: "1d" }
     )
 
-    res.cookie("token", token)
+    // Fixed cookie settings for Vercel + Render
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        maxAge: 24 * 60 * 60 * 1000
+    })
 
     res.status(200).json({
-        message: "User loggedIn successfully.",
+        message: "User logged in successfully",
         user: {
             id: user._id,
             username: user.username,
@@ -87,29 +102,34 @@ async function loginUserController(req, res) {
     })
 }
 
-async function logoutUserController(req,res){
+async function logoutUserController(req, res) {
+
     const token = req.cookies.token
 
-
-    if(token){
-        await tokenBlacklistModel.create({ token })
+    if (token) {
+        await tokenBlacklistModel.create({
+            token
+        })
     }
 
-    res.clearCookie("token")
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none"
+    })
 
     res.status(200).json({
         message: "User logged out successfully"
     })
 }
- 
 
-async function getMeController(req,res){
-    
+async function getMeController(req, res) {
+
     const user = await userModel.findById(req.user.id)
 
     res.status(200).json({
         message: "User details fetched successfully",
-        user:{
+        user: {
             id: user._id,
             username: user.username,
             email: user.email
@@ -117,10 +137,9 @@ async function getMeController(req,res){
     })
 }
 
-
 module.exports = {
     registerUserController,
     loginUserController,
     logoutUserController,
     getMeController
-} 
+}
