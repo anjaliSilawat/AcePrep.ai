@@ -3,7 +3,7 @@
 An AI-powered Interview Preparation Platform that helps users generate personalized interview strategies, technical interview questions, behavioral interview questions, skill gap analysis, preparation roadmaps, and ATS-style match scores based on a job description and the user’s profile/resume.
 
 🌐 **Live Demo:**  
-https://ace-prep-ai-sage.vercel.app
+ace-prep-ai-sage.vercel.app
 
 ---
 
