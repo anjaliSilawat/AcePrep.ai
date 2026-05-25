@@ -10,7 +10,9 @@ app.use(cookieParser())
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://ace-prep-ai-sage.vercel.app"
+        "https://ace-prep-ai-sage.vercel.app",
+        "https://ace-prep-ai-git-main-anjali-silawat-s-projects.vercel.app",
+        "https://ace-prep-eqvdp716w-anjali-silawat-s-projects.vercel.app"
     ],
     credentials: true
 }))
