@@ -202,8 +202,7 @@ Backend deployed on:
 
 ## Main Dashboard
 
-![AcePrep AI Dashboard](<img width="1462" height="808" alt="image" src="https://github.com/user-attachments/assets/d75253b0-d63e-4eac-b6cf-317c3da7b803" />
-)
+![AcePrep AI Dashboard](https://github.com/user-attachments/assets/2197f17d-9f15-48dc-bd49-bd9e6731df59)
 
 ---
 
@@ -248,7 +247,9 @@ Through this project, I learned:
 # 👩‍💻 Developed By
 
 **Anjali Silawat**  
-B.Tech ECE-AI | Full Stack Developer | AI Enthusiast
+Aspiring Software Developer | Full Stack Developer | Open to Full-Time SDE Opportunities
+
+📩 Open to collaborations, networking, and software development opportunities.
 
 ---
 
