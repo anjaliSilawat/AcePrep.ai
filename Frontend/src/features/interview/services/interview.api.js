@@ -1,10 +1,18 @@
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: "https://aceprep-ai.onrender.com",
-    withCredentials: true,
+    baseURL: "https://aceprep-ai.onrender.com"
 })
 
+const getAuthHeaders = () => {
+
+    const token = localStorage.getItem("token")
+
+    return {
+        Authorization: `Bearer ${token}`
+    }
+
+}
 
 // GENERATE REPORT
 
@@ -36,8 +44,8 @@ export const generateInterviewReport = async ({
         formData,
         {
             headers: {
-                "Content-Type":
-                    "multipart/form-data"
+                ...getAuthHeaders(),
+                "Content-Type": "multipart/form-data"
             }
         }
     )
@@ -46,7 +54,6 @@ export const generateInterviewReport = async ({
 
 }
 
-
 // GET REPORT BY ID
 
 export const getInterviewReportById = async (
@@ -54,26 +61,30 @@ export const getInterviewReportById = async (
 ) => {
 
     const response = await api.get(
-        `/api/interview/report/${interviewId}`
+        `/api/interview/report/${interviewId}`,
+        {
+            headers: getAuthHeaders()
+        }
     )
 
     return response.data
 
 }
-
 
 // GET ALL REPORTS
 
 export const getAllInterviewReports = async () => {
 
     const response = await api.get(
-        "/api/interview/"
+        "/api/interview/",
+        {
+            headers: getAuthHeaders()
+        }
     )
 
     return response.data
 
 }
-
 
 // DOWNLOAD PDF
 
@@ -84,6 +95,7 @@ export const generateResumePdf = async ({
     const response = await api.get(
         `/api/interview/resume/pdf/${interviewReportId}`,
         {
+            headers: getAuthHeaders(),
             responseType: "blob"
         }
     )
