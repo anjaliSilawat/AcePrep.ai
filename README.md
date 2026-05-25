@@ -1,4 +1,4 @@
-# AcePrep AI 🚀
+# AcePrep.ai 🚀
 
 An AI-powered Interview Preparation Platform that helps users generate personalized interview strategies, technical interview questions, behavioral interview questions, skill gap analysis, preparation roadmaps, and ATS-style match scores based on a job description and the user’s profile/resume.
 
@@ -9,7 +9,7 @@ https://ace-prep-ai-sage.vercel.app
 
 # 📌 About The Project
 
-AcePrep AI was built to solve a very common problem faced by students, freshers, and job seekers:
+AcePrep.ai was built to solve a very common problem faced by students, freshers, and job seekers:
 
 > “How do I prepare specifically for this job role?”
 
@@ -19,7 +19,7 @@ Most candidates prepare randomly without knowing:
 - what skills are missing,
 - or how strong their profile is for that position.
 
-AcePrep AI solves this by using AI to analyze:
+AcePrep.ai solves this by using AI to analyze:
 - the job description,
 - the candidate’s resume,
 - and their self-description,
@@ -202,7 +202,7 @@ Backend deployed on:
 
 ## Main Dashboard
 
-![AcePrep AI Dashboard](https://github.com/user-attachments/assets/2197f17d-9f15-48dc-bd49-bd9e6731df59)
+![AcePrep.ai Dashboard](https://github.com/user-attachments/assets/2197f17d-9f15-48dc-bd49-bd9e6731df59)
 
 ---
 
@@ -256,3 +256,4 @@ Aspiring Software Developer | Full Stack Developer | Open to Full-Time SDE Oppor
 # ⭐ If You Like This Project
 
 If you found this project useful, consider giving it a ⭐ on GitHub!
+
