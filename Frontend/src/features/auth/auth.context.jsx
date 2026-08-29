@@ -24,15 +24,23 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const handleLogin = async (data) => {
-        const res = await login(data);
-        setUser(res.user);
-        return res.user;
+        try {
+            const res = await login(data);
+            setUser(res.user);
+            return res.user;
+        } catch (err) {
+            throw new Error(err?.response?.data?.message || "Login failed");
+        }
     };
 
     const handleRegister = async (data) => {
-        const res = await register(data);
-        setUser(res.user);
-        return res.user;
+        try {
+            const res = await register(data);
+            setUser(res.user);
+            return res.user;
+        } catch (err) {
+            throw new Error(err?.response?.data?.message || "Registration failed");
+        }
     };
 
     const handleLogout = async () => {

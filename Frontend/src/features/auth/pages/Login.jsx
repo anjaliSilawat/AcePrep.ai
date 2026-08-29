@@ -12,10 +12,12 @@ const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
 
         e.preventDefault();
+        setError("");
 
         try {
 
@@ -30,7 +32,7 @@ const Login = () => {
 
         } catch (err) {
 
-            console.log(err);
+            setError(err.message);
 
         }
 
@@ -48,6 +50,8 @@ const Login = () => {
                 <div className="form-container">
 
                     <h1>Login</h1>
+
+                    {error && <p style={{ color: "red" }}>{error}</p>}
 
                     <form onSubmit={handleSubmit}>
 
